@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Alphabetical Order Sorter</title>
+  <style>
+  body {
+      text-align: center;
+    }
+    .list-container {
+      text-align: center;
+      display: inline-block;
+    }
+    </style>
+</head>
+<body>
+<h1 style="text-decoration: underline; color:skyblue;">JAVASCRIPT TASK-6</h1>
+
+  <div class="list-container">
+  <h2>Enter a string:</h2>
+  
+  <form onsubmit="sortString(event)">
+    <label for="inputString">String:</label>
+    <input type="text" id="inputString" required>
+    <button type="submit">Sort</button>
+  </form>
+  <br>
+  
+  <div id="result"></div>
+  
+  <script>
+    function sortString(event) {
+      event.preventDefault(); // Prevent form submission
+      
+      var inputString = document.getElementById('inputString').value;
+      var sortedString = inputString.split('').sort().join('');
+      
+      var resultElement = document.getElementById('result');
+      resultElement.innerHTML = 'The string when arranged in alphabetical order gives: ' + sortedString;
+    }
+  </script>
+  </div>
+</body>
+</html>
